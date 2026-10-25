@@ -16,7 +16,7 @@ First release.
   test and real run references.
 - QA flow template in Markdown and YAML, bug report and findings templates,
   and `expand-flow.mjs`, which crosses a flow with the atlas.
-- Installer `npx outofthebox-ai` for Claude Code, AGENTS.md readers (Codex,
+- Installer `npx @altamisatmaja/outofthebox` for Claude Code, AGENTS.md readers (Codex,
   Amp, OpenCode, Copilot), Gemini CLI, Cursor and Cline, with a saved usage
   mode.
 - Plugin doors: Claude Code, Codex, Cursor, Kimi Code, Cline, Oh My Pi, Pi.

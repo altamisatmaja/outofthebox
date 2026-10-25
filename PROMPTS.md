@@ -122,7 +122,7 @@ could not verify.
 ## Set it once
 
 ```
-npx outofthebox-ai --mode during
+npx @altamisatmaja/outofthebox --mode during
 ```
 
 Or add a line to `CLAUDE.md` or `AGENTS.md`:

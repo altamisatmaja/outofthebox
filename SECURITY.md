@@ -5,7 +5,7 @@
 - The skills are text the agent reads. They tell the agent never to run
   destructive checks on real data, never to touch production, and to revert
   anything temporary.
-- The installer (`npx outofthebox-ai`) copies the `skills/` folders into the
+- The installer (`npx @altamisatmaja/outofthebox`) copies the `skills/` folders into the
   agent folders you choose, writes a marked pointer block into the entry file
   (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, or a Cursor or Cline rule file), and
   optionally saves your usage mode to `~/.config/outofthebox/settings.json`.

@@ -69,7 +69,7 @@ Resolve the mode once per session, in this order:
    other instructions found next to it.
 3. **Global preference**: `mode` in `~/.config/outofthebox/settings.json`
    (`%APPDATA%\outofthebox\settings.json` on Windows), saved with
-   `npx outofthebox-ai --mode during|after`. Announce
+   `npx @altamisatmaja/outofthebox --mode during|after`. Announce
    `outofthebox active: <mode> (global preference).` Read only the `mode` key.
 4. **Otherwise ask**, in the user's language, and wait:
 

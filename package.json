@@ -1,12 +1,12 @@
 {
-  "name": "outofthebox-ai",
+  "name": "@altamisatmaja/outofthebox",
   "version": "0.1.0",
   "type": "module",
   "description": "Out of the Box: relentless testing for AI agents. Installs the outofthebox skills into your coding agent.",
   "license": "MIT",
   "author": "Altamis Fattah Atmaja",
   "bin": {
-    "outofthebox-ai": "cli/index.mjs"
+    "outofthebox": "cli/index.mjs"
   },
   "files": [
     "cli/",
@@ -50,5 +50,8 @@
     "type": "git",
     "url": "git+https://github.com/altamisatmaja/outofthebox.git"
   },
-  "homepage": "https://github.com/altamisatmaja/outofthebox"
+  "homepage": "https://github.com/altamisatmaja/outofthebox",
+  "publishConfig": {
+    "access": "public"
+  }
 }

@@ -2,13 +2,13 @@
 // outofthebox installer. Copies the skills into the agents you use and writes
 // the pointer that loads them every session.
 //
-//   npx outofthebox-ai                      ask which skills, scope and agents
-//   npx outofthebox-ai --yes                all skills, this project, Claude Code and AGENTS.md readers
-//   npx outofthebox-ai --skills outofthebox,outofthebox-qa --agents claude,cursor
-//   npx outofthebox-ai --global             install under your home folder
-//   npx outofthebox-ai --update             refresh every install found here and at home
-//   npx outofthebox-ai --uninstall          remove the skills and the pointer
-//   npx outofthebox-ai --mode during|after|ask   save or clear the usage mode; --mode alone shows it
+//   npx @altamisatmaja/outofthebox                      ask which skills, scope and agents
+//   npx @altamisatmaja/outofthebox --yes                all skills, this project, Claude Code and AGENTS.md readers
+//   npx @altamisatmaja/outofthebox --skills outofthebox,outofthebox-qa --agents claude,cursor
+//   npx @altamisatmaja/outofthebox --global             install under your home folder
+//   npx @altamisatmaja/outofthebox --update             refresh every install found here and at home
+//   npx @altamisatmaja/outofthebox --uninstall          remove the skills and the pointer
+//   npx @altamisatmaja/outofthebox --mode during|after|ask   save or clear the usage mode; --mode alone shows it
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'

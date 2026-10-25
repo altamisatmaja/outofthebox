@@ -15,7 +15,7 @@
 
 [Before and after](#before-and-after) · [Install](#install) · [What it does](#what-it-does) · [Skills](#skills) · [Scripts and YAML](#scripts-and-yaml) · [FAQ](#faq)
 
-<code>npx outofthebox-ai</code>
+<code>npx @altamisatmaja/outofthebox</code>
 
 </div>
 
@@ -74,15 +74,15 @@ outofthebox ships as standard agent skills: one folder per skill, each holding a
 One command, then answer the prompts. It asks which skills, where (this project or everywhere), and which agents, then copies the folders and writes the pointer that loads outofthebox every session. No dependencies, no network.
 
 ```
-npx outofthebox-ai
+npx @altamisatmaja/outofthebox
 ```
 
 Without prompts:
 
 ```
-npx outofthebox-ai --yes
-npx outofthebox-ai --skills outofthebox,outofthebox-qa --agents claude,cursor
-npx outofthebox-ai --global
+npx @altamisatmaja/outofthebox --yes
+npx @altamisatmaja/outofthebox --skills outofthebox,outofthebox-qa --agents claude,cursor
+npx @altamisatmaja/outofthebox --global
 ```
 
 ### Claude Code: plugin
@@ -194,7 +194,7 @@ The agent asks at the start of a session unless a mode is already set. Both mode
 Set it once for every project:
 
 ```
-npx outofthebox-ai --mode during
+npx @altamisatmaja/outofthebox --mode during
 ```
 
 Or for one project, with a line in `CLAUDE.md` or `AGENTS.md`:

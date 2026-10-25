@@ -47,11 +47,11 @@ touched.
 ### Installer
 
 ```
-npx outofthebox-ai                 # prompts
-npx outofthebox-ai --yes           # all skills, this project, claude + codex
-npx outofthebox-ai --skills outofthebox,outofthebox-dev --agents claude
-npx outofthebox-ai --global --agents claude,codex,gemini
-npx outofthebox-ai --dir ../other-project --yes
+npx @altamisatmaja/outofthebox                 # prompts
+npx @altamisatmaja/outofthebox --yes           # all skills, this project, claude + codex
+npx @altamisatmaja/outofthebox --skills outofthebox,outofthebox-dev --agents claude
+npx @altamisatmaja/outofthebox --global --agents claude,codex,gemini
+npx @altamisatmaja/outofthebox --dir ../other-project --yes
 ```
 
 The core is always included, even when you leave it out of `--skills`.
@@ -82,10 +82,10 @@ Copy `skills/` into your agent's skills folder and paste the contents of
 ## 4. Choose a mode
 
 ```
-npx outofthebox-ai --mode during   # save
-npx outofthebox-ai --mode after
-npx outofthebox-ai --mode ask      # clear, ask every session again
-npx outofthebox-ai --mode          # show
+npx @altamisatmaja/outofthebox --mode during   # save
+npx @altamisatmaja/outofthebox --mode after
+npx @altamisatmaja/outofthebox --mode ask      # clear, ask every session again
+npx @altamisatmaja/outofthebox --mode          # show
 ```
 
 Saved in `~/.config/outofthebox/settings.json` (or `$XDG_CONFIG_HOME`, or
@@ -121,7 +121,7 @@ Reply with the numbers to fix.
 ## 6. Update
 
 ```
-npx outofthebox-ai --update
+npx @altamisatmaja/outofthebox --update
 ```
 
 Refreshes every install found in the current project and under your home
@@ -130,8 +130,8 @@ folder. Plugins update through their own agent. Start a new session after.
 ## 7. Remove
 
 ```
-npx outofthebox-ai --uninstall --agents claude,codex
-npx outofthebox-ai --uninstall --global --agents claude
+npx @altamisatmaja/outofthebox --uninstall --agents claude,codex
+npx @altamisatmaja/outofthebox --uninstall --global --agents claude
 ```
 
 Removes the skill folders and the pointer block. An entry file that held only
