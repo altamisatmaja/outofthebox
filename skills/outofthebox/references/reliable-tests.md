@@ -40,7 +40,7 @@ Say it in the report: "both new tests fail on the old code, pass on the new".
 
 - Assert values, not just status codes. A 200 with the wrong amount is a bug.
 - For money, assert both sides: the payer's balance and the record's state.
-- For privacy, assert absence: `assertArrayNotHasKey('booking_code', ...)`.
+- For privacy, assert absence: `assertArrayNotHasKey('entry_qr', ...)`.
 - For UI, assert what a user sees and can do: the text, the disabled button,
   the link target, the element that must not exist.
 - Name the test after the behaviour and keep a one line comment with who asked

@@ -64,7 +64,7 @@ For each locale the product supports:
 ### Completeness
 
 - Every key exists in every language file. A missing key shows the raw key
-  (`booking.pay_rest`) or silently falls back to another language.
+  (`checkout.pay_now`) or silently falls back to another language.
 - New keys added in this change exist everywhere (a check script is cheap).
 - Placeholders survive translation: `:1`, `{name}`, `%s`, HTML tags. A
   translator who deletes a placeholder breaks the sentence; one who
@@ -112,7 +112,7 @@ For each locale the product supports:
 | Money | Symbol position, decimals, rounding | Two decimals shown for a currency that has none, such as JPY |
 | Names | Order, number of parts, one name only | A user with a single name cannot sign up |
 | Addresses | Fields, order, postcode format | A required "state" field in a country with none |
-| Phone | Country code, length, formatting | A local number rejected because it lacks +62 |
+| Phone | Country code, length, formatting | A local number rejected because it lacks the country code |
 | Sorting | Alphabet order, accents | Ö sorted after Z in German or Swedish |
 | Case | Language specific case rules | Turkish dotted and dotless i in case insensitive search |
 
@@ -124,7 +124,7 @@ money, E.164 phone numbers), and test the round trip.
 - Store instants in UTC; show them in the zone that matters to the reader.
   Decide which zone that is for each screen: the user's, the store's, or the
   event's.
-- A booking made by someone in Jakarta for a store in Bali: which clock does
+- A ticket bought by someone in London for a concert in Lisbon: which clock does
   each screen show, and does the confirmation say so?
 - Opening hours, deadlines and "today" are in the location's zone, not the
   server's.

@@ -30,7 +30,7 @@ DOI 10.1145/3143561.**
 When the exact expected output is unknown, check how the output must change
 when the input changes.
 *Agent does:* when there is no exact expected value, assert a relation:
-splitting a bill three ways sums to the total; adding a filter never
+dividing a payment into three instalments sums to the total; adding a filter never
 returns more rows; the same search in two languages returns the same ids.
 
 ### Combinatorial interaction

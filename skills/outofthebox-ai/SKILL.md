@@ -25,9 +25,9 @@ judges meaning, and **repeated runs** that measure a pass rate.
 
 Before any test, write the feature's contract in plain sentences:
 
-- What it must do ("answers questions about the user's own bookings").
+- What it must do ("answers questions about the user's own orders").
 - What it must never do ("never states a price that is not in the data";
-  "never answers about another user's booking").
+  "never answers about another user's order").
 - When it must say "I don't know" or hand over to a person.
 - The format of the output (JSON schema, length, language, tone).
 - The latency and cost budget per request.
@@ -128,7 +128,7 @@ Report numbers per group, with run counts:
 ```
 Golden set v14, 180 cases, 5 runs each, model X at temperature 0.2.
 Grounding: 178/180 (2 cases invented a delivery fee) FAIL, threshold 100%.
-Common: 96% PASS. Unanswerable: 88% FAIL (says a booking exists when none does).
+Common: 96% PASS. Unanswerable: 88% FAIL (says an order exists when none does).
 p95 latency 2.8 s, mean cost $0.0031 per request.
 Not tested: Arabic, voice input.
 ```

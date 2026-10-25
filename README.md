@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="assets/outofthebox-icon.svg" alt="outofthebox" width="125" height="125">
+
 # Out of the Box: Relentless Testing for AI Agents
 
 ### A rulebook that makes an AI agent keep asking "and what if...?" until nothing new turns up.
