@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="assets/outofthebox-icon.svg" alt="outofthebox" width="125" height="125">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/outofthebox-icon-dark.svg">
+  <img src="assets/outofthebox-icon.svg" alt="outofthebox" width="125" height="125">
+</picture>
 
 # Out of the Box: Relentless Testing for AI Agents
 
