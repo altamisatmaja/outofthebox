@@ -1,0 +1,112 @@
+# The edge case atlas as data. edge-case-atlas.md is the readable version;
+# scripts/expand-flow.mjs crosses these questions with a QA flow's steps.
+# Impact ranks: 1 money or data loss, 2 security or privacy, 3 broken flow, 4 cosmetic.
+version: 1
+axes:
+  - id: who
+    name: Who
+    questions:
+      - text: The same person in two roles (a buyer opening a link meant for the recipient)
+        impact: 1
+      - text: Signed out, guest, another role, a deactivated account
+        impact: 2
+      - text: Two people acting on the same record at once
+        impact: 1
+      - text: Ownership inferred from another field instead of stored
+        impact: 1
+  - id: how_much
+    name: How much
+    questions:
+      - text: Zero, one, the maximum, one over, negative, decimals
+        impact: 1
+      - text: A division that leaves a remainder; do the parts sum to the total
+        impact: 1
+      - text: A cap on the total, not only on each row
+        impact: 1
+      - text: A zero, empty or full label that misleads
+        impact: 3
+  - id: when
+    name: When
+    questions:
+      - text: At the boundary, across midnight, in another time zone, on a DST change, on Feb 29
+        impact: 3
+      - text: Out of order (a payment after expiry, a reply before the request is saved)
+        impact: 1
+      - text: The same event twice (retry, double tap)
+        impact: 1
+      - text: A stale screen opened before someone else acted
+        impact: 3
+      - text: A session or link that expires midway
+        impact: 3
+  - id: state
+    name: What state
+    questions:
+      - text: Every status (pending, expired, cancelled, refunded, partial, archived)
+        impact: 3
+      - text: What each state shows and lets the user do
+        impact: 2
+      - text: Half done (local write succeeded, outside call failed)
+        impact: 1
+      - text: Records the old version already damaged
+        impact: 1
+  - id: where
+    name: Where
+    questions:
+      - text: The production engine differs from the test engine (enums, index names, types)
+        impact: 1
+      - text: Phone width, slow network, offline, another browser
+        impact: 3
+      - text: A config that points the suite at real data
+        impact: 1
+  - id: input
+    name: Which input
+    questions:
+      - text: Empty, whitespace, very long, unicode, emoji, right to left, markup
+        impact: 3
+      - text: Null vs absent vs zero
+        impact: 3
+      - text: Old links, old app versions, old file formats
+        impact: 3
+  - id: how_many
+    name: How many
+    questions:
+      - text: None, one, many, exactly a page, one past a page
+        impact: 3
+      - text: Production scale data (20 rows works, 20,000 does not)
+        impact: 3
+      - text: A usage limit reached midway
+        impact: 3
+  - id: side_effects
+    name: What else changes
+    questions:
+      - text: Every debit has its credit; a reversal returns everything it took
+        impact: 1
+      - text: Messages sent once, to the right person, in the right language
+        impact: 2
+      - text: Every new text exists in every language file
+        impact: 4
+  - id: user
+    name: What the user will actually do
+    questions:
+      - text: Back, refresh mid action, two tabs, paste the link elsewhere
+        impact: 3
+      - text: Stop halfway and come back tomorrow
+        impact: 3
+      - text: Read every sentence literally; is it still true
+        impact: 3
+packs:
+  payments: [fees on top of instalments, rounding, partial and late payments, refunds to the right party, idempotency keys, signature checks, reconciliation]
+  scheduling: [opening hours in local time, slots crossing closing time, capacity per window, holds while unpaid, overbooking under concurrency]
+  identity: [roles per tenant, links as credentials, session reuse on one device, deactivated users with live tokens]
+  data: [encodings, duplicates, partial files, reruns, late data, schema drift, totals reconcile]
+  apis: [contract drift, unknown provider statuses, timeouts, rate limits, pagination edges]
+  messaging: [templates per language, opt outs, retries without duplicates, guests without accounts]
+  content: [missing keys, long translations, plural forms, local date and money formats]
+  mobile: [offline then sync, background kill, permission denied, old OS versions]
+  hardware: [sensor noise, actuator limits, battery sag, latency, simulator ground truth]
+  auth: [every door into an account, links and codes single use and expiring, sessions ended on sign out and role change, attempt limits on every code]
+  flow: [moves not on the state drawing, invariants after every step, every actor's view, interrupted and repeated journeys]
+  responsive: [phone tablet desktop widths, breakpoints one pixel either side, zoom and large text, keyboard covering the action]
+  infra: [forgotten staging and old buckets, secrets in repo history and bundles, debug pages and default passwords, open ports and admin panels, untested backups]
+  redblue: [rules of engagement approved, STRIDE per change, abuse cases beside use cases, logged alerted and runbook for every case]
+  documents: [every claim sourced, every number adds up, every step followable, every link resolves]

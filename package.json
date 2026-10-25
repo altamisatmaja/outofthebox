@@ -1,0 +1,54 @@
+{
+  "name": "outofthebox-ai",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Out of the Box: relentless testing for AI agents. Installs the outofthebox skills into your coding agent.",
+  "license": "MIT",
+  "author": "Altamis Fattah Atmaja",
+  "bin": {
+    "outofthebox-ai": "cli/index.mjs"
+  },
+  "files": [
+    "cli/",
+    "skills/",
+    "rules/",
+    "outofthebox.md",
+    "VERSION",
+    ".cline-plugin/"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test cli/install.test.mjs cli/yaml.test.mjs && node scripts/check-repo.mjs",
+    "build": "node scripts/build-single.mjs",
+    "check": "node scripts/check-repo.mjs",
+    "bump": "node scripts/bump-version.mjs"
+  },
+  "keywords": [
+    "pi-package",
+    "testing",
+    "qa",
+    "agent-skills"
+  ],
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  },
+  "cline": {
+    "plugins": [
+      {
+        "paths": [
+          "./.cline-plugin/plugin.js"
+        ],
+        "capabilities": []
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altamisatmaja/outofthebox.git"
+  },
+  "homepage": "https://github.com/altamisatmaja/outofthebox"
+}

@@ -1,0 +1,36 @@
+# QA flow as data. Fill what you know; write "unknown" where you do not.
+# Expand it into a case table with:
+#   node skills/outofthebox-qa/scripts/expand-flow.mjs this-file.yaml > cases.md
+# The values below are an example for a fictional ticket store; replace them.
+feature: Gift a ticket
+why: Buyers send a concert ticket to a friend who claims it with a link
+changed: The recipient no longer needs an account before claiming
+environment:
+  where: http://localhost:3000
+  data: seeded test accounts and a test event only
+  sandbox: payment provider test mode
+  never_touch: [production, real customers, real money]
+packs: [payments]
+actors:
+  - name: Buyer
+    may: [buy a ticket, gift it by email, cancel the gift before it is claimed]
+    never: [claim the gift themselves, see the recipient's account]
+  - name: Recipient
+    may: [claim the ticket through the link, transfer it once]
+    never: [see the buyer's payment details]
+steps:
+  - actor: Buyer
+    do: Buy one ticket and choose "gift to a friend"
+    expect: The order is paid and a claim link is emailed to the recipient
+  - actor: Recipient
+    do: Open the link and claim the ticket
+    expect: The ticket moves to the recipient; the buyer sees "claimed"
+  - actor: Recipient
+    do: Show the entry QR code at the door
+    expect: The code scans once and is refused the second time
+rules:
+  amounts: Service fee charged once per order, not per ticket gifted
+  time: An unclaimed gift returns to the buyer 48 hours before the event
+  states: The entry QR code stays hidden until the ticket is claimed
+out_of_scope: [refunds]
+risks: [the buyer opens the claim link while signed in]

@@ -1,0 +1,23 @@
+name: Missed case
+description: The agent hunted with outofthebox and still missed a case. Tell us which, so a rule or the atlas can catch it.
+labels: [missed-case]
+body:
+  - type: textarea
+    id: case
+    attributes:
+      label: The case that was missed
+      description: Actor, input, state, and order of events.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: What it cost
+      description: Money or data loss, security or privacy, broken flow, or cosmetic.
+    validations:
+      required: true
+  - type: input
+    id: axis
+    attributes:
+      label: Which atlas axis should have caught it
+      placeholder: Who, How much, When, What state, Where, Which input, How many, What else changes, What the user will do
