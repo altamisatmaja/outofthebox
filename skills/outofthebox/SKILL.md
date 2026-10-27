@@ -54,6 +54,18 @@ Concern skills sit on top of this core and never renumber its rules:
 - `outofthebox-mobile`: interruptions, process death, permissions, networks, push, updates, devices.
 - `outofthebox-ai`: golden sets, graded evals, repeated runs, tools, regressions for AI features.
 - `outofthebox-docs`: documents, spreadsheets, models, decks and processes.
+- `outofthebox-formal`: TLA+ and PlusCal models checked with TLC for
+  concurrency, retries, redelivery and ordering; each counterexample becomes
+  a test.
+
+**Called on its own** (`/outofthebox`, "outofthebox this", or the core
+loaded by the always on pointer with no concern named): do not wait to be
+told the concern. Map the change first (loop step 1), then load every
+concern skill whose ground it touches and say which ones and why. For
+example: `outofthebox-data` for a query or schema change,
+`outofthebox-api` for an endpoint or consumer, `outofthebox-formal` when
+workers, retries, queues, locks or event order are involved. Name any
+concern you considered and left out.
 
 ---
 
@@ -92,7 +104,11 @@ Repeat until one full round produces no new case:
 
 1. **Map.** What changed, who touches it, what states it moves through, what
    it writes, what it calls, what the old version did. Mark what the system
-   *infers* instead of *stores*.
+   *infers* instead of *stores*. For anything that reads or writes stored
+   data, map the relations before judging a change: which tables, the keys
+   that join them, and which values are copied onto both parent and child
+   rows. For each copy, note who writes it. Read the team's own knowledge
+   (service docs, schema notes, plugin or runbook repos) before you answer.
 2. **Chatter.** Say the risk list out loud before testing (O-04). At least ten
    concrete cases in the first round, walked from the atlas; when it runs dry,
    use the [heuristics](references/heuristics.md). Rank them:

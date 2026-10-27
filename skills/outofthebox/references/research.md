@@ -190,6 +190,14 @@ failures, and tests that run but carry weak assertions.
 *Agent does:* this is why O-07 exists. A generated check that never failed
 proves nothing.
 
+### Formal specification in industry
+
+- **Newcombe, Rath, Zhang, Munteanu, Brooker and Deardeuff, "How Amazon Web
+  Services Uses Formal Methods", Communications of the ACM 58(4), 2015:**
+  engineers wrote TLA+ specifications of the designs of production systems
+  and checked them with the TLC model checker, which found subtle bugs in
+  those designs. The basis of `outofthebox-formal`.
+
 ## Practitioner references
 
 - **Whittaker, Exploratory Software Testing (2009):** tours such as money,
@@ -228,6 +236,7 @@ proves nothing.
 - https://www.ece.iastate.edu/~mai/docs/papers/2016_SoCC_COS.pdf
 - https://homes.cs.washington.edu/~mernst/pubs/mutation-effectiveness-fse2014-abstract.html
 - https://par.nsf.gov/biblio/10651549
+- https://dl.acm.org/doi/10.1145/2699417
 - https://arxiv.org/pdf/1801.07009
 - https://ieeexplore.ieee.org/document/4343733/
 - https://cis.upenn.edu/~bcpierce/papers/icse24-pbt-in-practice

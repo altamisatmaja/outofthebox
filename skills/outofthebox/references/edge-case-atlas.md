@@ -47,6 +47,12 @@ end add what a specific kind of product tends to hide.
   the seat is marked sold before the charge; the charge fails, the seat stays
   sold to nobody.*
 - Records the old version already damaged.
+- **A copied value assumed equal.** The same field sits on the parent and
+  on each child row, and each copy is written separately from the payload.
+  *Example: a refactor that batches a query takes the sales organization
+  code from the first order line instead of the order header. Nothing kept
+  the two equal, so the filter could quietly match different discount
+  rows.*
 
 ## 5. Where (environments and engines)
 
@@ -118,6 +124,9 @@ tokens, an id that matches a row in the wrong table.
 
 Encodings, delimiters, duplicates, partial files, reruns (idempotent?), late
 data, schema drift, time zone of timestamps, totals that must reconcile.
+A batched or rewritten query (an N+1 fix) keeps the old filter's values
+from the same source and returns the same rows; prove it with a test that
+asserts the values, on more than one row.
 
 ### APIs and integrations
 

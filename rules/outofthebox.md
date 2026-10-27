@@ -19,5 +19,6 @@ Load the matching outofthebox skill before starting. Each skill is a folder in t
 - Mobile apps: skills/outofthebox-mobile/SKILL.md
 - AI and LLM features: skills/outofthebox-ai/SKILL.md
 - Documents, spreadsheets and processes: skills/outofthebox-docs/SKILL.md
+- Formal specification, TLA+ and model checking: skills/outofthebox-formal/SKILL.md
 Before starting, follow the core's "Two usage modes" section: session instruction first, then project preference, then global preference, then ask. Announce `outofthebox active: <mode> (<source>).` once.
 </EXTREMELY_IMPORTANT>

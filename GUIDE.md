@@ -26,6 +26,7 @@ Each skill is a folder with a `SKILL.md`:
 | `outofthebox-ai` | Features built on a language model. |
 | `outofthebox-docs` | Documents, spreadsheets, decks and processes. |
 | `outofthebox-redblue` | Authorized abuse cases paired with detection, alerting and response checks. |
+| `outofthebox-formal` | Concurrency, retries, redelivery or event order, modelled in TLA+ and checked with TLC. |
 
 The installer also writes a **pointer block** between
 `<!-- outofthebox:start -->` and `<!-- outofthebox:end -->` in the agent's

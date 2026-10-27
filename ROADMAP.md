@@ -1,5 +1,18 @@
 # Roadmap
 
+## 0.2.0 (2026-10-27)
+
+- New concern skill `outofthebox-formal`: TLA+ and PlusCal models checked
+  with TLC for concurrency, retries, redelivery and event order, with an
+  example spec (`Redelivery.tla`) in a buggy and a fixed config.
+- The core now picks concern skills by itself when called on its own
+  (`/outofthebox`), and names the ones it left out.
+- Map step: relations, join keys and copied values mapped before judging a
+  data change; team knowledge read before answering.
+- New atlas question (a copied value assumed equal), data pack item
+  (batched query parity), and a relations section in `outofthebox-data`,
+  from a missed case in a real N+1 review.
+
 ## 0.1.0 (2026-10-25)
 
 First release.

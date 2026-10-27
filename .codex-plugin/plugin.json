@@ -1,6 +1,6 @@
 {
   "name": "outofthebox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Out of the Box: relentless testing for AI agents. The agent keeps naming what could still break, tests each case so it fails on the old version, and stops only when a round finds nothing new. Loads as seventeen skills.",
   "author": {
     "name": "Altamis Fattah Atmaja"
@@ -8,7 +8,14 @@
   "homepage": "https://github.com/altamisatmaja/outofthebox",
   "repository": "https://github.com/altamisatmaja/outofthebox",
   "license": "MIT",
-  "keywords": ["testing", "qa", "edge-cases", "regression-testing", "agent-skills", "exploratory-testing"],
+  "keywords": [
+    "testing",
+    "qa",
+    "edge-cases",
+    "regression-testing",
+    "agent-skills",
+    "exploratory-testing"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "outofthebox",

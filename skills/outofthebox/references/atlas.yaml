@@ -49,6 +49,8 @@ axes:
         impact: 1
       - text: Records the old version already damaged
         impact: 1
+      - text: A value copied onto parent and child rows, assumed equal while each copy is written separately
+        impact: 1
   - id: where
     name: Where
     questions:
@@ -98,7 +100,7 @@ packs:
   payments: [fees on top of instalments, rounding, partial and late payments, refunds to the right party, idempotency keys, signature checks, reconciliation]
   scheduling: [opening hours in local time, slots crossing closing time, capacity per window, holds while unpaid, overbooking under concurrency]
   identity: [roles per tenant, links as credentials, session reuse on one device, deactivated users with live tokens]
-  data: [encodings, duplicates, partial files, reruns, late data, schema drift, totals reconcile]
+  data: [encodings, duplicates, partial files, reruns, late data, schema drift, totals reconcile, batched query parity with the old filter source]
   apis: [contract drift, unknown provider statuses, timeouts, rate limits, pagination edges]
   messaging: [templates per language, opt outs, retries without duplicates, guests without accounts]
   content: [missing keys, long translations, plural forms, local date and money formats]

@@ -2,3 +2,7 @@ node_modules/
 .DS_Store
 *.log
 outofthebox/hunt-*.md
+# TLC model checker output (written next to the spec on each run)
+states/
+*.st
+*.fp

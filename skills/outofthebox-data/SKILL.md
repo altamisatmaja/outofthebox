@@ -36,6 +36,24 @@ never on development data someone depends on, never on production.
 - Late data, out of order data, time zones of timestamps.
 - Totals reconcile with the source: count rows and sum amounts on both sides.
 
+## Relations and query refactors
+
+Before reviewing a change that reads stored data, map the tables it
+touches, the keys that join them, and every value copied onto more than one
+level (header and line, line and adjustment). For each copy, find what
+writes it. A copy the code never forces to match its parent can differ in
+real rows.
+
+- An N+1 fix or batched query keeps the old filter values from the old
+  source. Changing the source (taking a code from the first child instead
+  of the parent) is a behaviour change, not a refactor.
+- Grouping for cases the query cannot produce (many parents when the page
+  is filtered to one) is dead code, so name it.
+- Pin parity with a test that asserts the values on two or more rows with
+  different children, not only the status code.
+- When equality of copies matters, write the read only count of rows where
+  they differ (O-09) and ask before running it against shared data.
+
 ## Damage already done (O-09)
 
 When the bug wrote wrong data, write the query that finds every affected
@@ -50,6 +68,7 @@ proves nothing.
 ## Data checklist
 
 - [ ] Target named before running, never production
+- [ ] Relations mapped: join keys, copied values and who writes each
 - [ ] Migration up, down, up on the production engine
 - [ ] Old rows read by new code
 - [ ] Affected rows found and counted

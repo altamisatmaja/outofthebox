@@ -179,6 +179,7 @@ It works in any field: code, data, mobile, hardware, documents, processes.
 | `outofthebox-ai` | Contract, golden set, grading by meaning, repeated runs, tool calls, regressions, cost | Chatbots, assistants, RAG, agents |
 | `outofthebox-docs` | Claims, numbers, steps, links, spreadsheet formulas, models, decks, processes | Work that is not code |
 | `outofthebox-redblue` | Rules of engagement, threat model, abuse cases, then detect, alert, respond | Security reviews and incident readiness |
+| `outofthebox-formal` | TLA+ and PlusCal models, invariants, TLC model checking, counterexamples turned into tests | Queues, retries, locks, concurrent workers, event order |
 
 Security skills are defensive and for systems you own, in a test environment, with written permission. Install one, several, or the core alone. Concern skills cite the core rules by number and never copy them.
 

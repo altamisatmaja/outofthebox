@@ -1,6 +1,6 @@
 {
   "name": "@altamisatmaja/outofthebox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "Out of the Box: relentless testing for AI agents. Installs the outofthebox skills into your coding agent.",
   "license": "MIT",
@@ -11,6 +11,9 @@
   "files": [
     "cli/",
     "skills/",
+    "!skills/**/states/",
+    "!skills/**/*.st",
+    "!skills/**/*.fp",
     "rules/",
     "outofthebox.md",
     "VERSION",

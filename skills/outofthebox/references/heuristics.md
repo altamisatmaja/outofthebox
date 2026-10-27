@@ -82,4 +82,7 @@ roles.
 - What if the value is missing rather than zero?
 - What if the clock is in another time zone?
 - What if the data was written by the old version?
+- What if the copy on the child row disagrees with the one on the parent?
+- What if every order of these events happens? When the list is too long
+  to test by hand, model it (`outofthebox-formal`).
 - What does the screen say now, and is it true?
